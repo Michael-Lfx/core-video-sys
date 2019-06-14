@@ -2,7 +2,7 @@ use crate::core_foundation_sys::{
     base::{Boolean, CFTypeID},
     string::CFStringRef,
 };
-use crate::metal::TextureRef;
+use crate::metal::Texture;
 
 use crate::image_buffer::CVImageBufferRef;
 
@@ -13,7 +13,7 @@ extern "C" {
 
     pub fn CVMetalTextureGetTypeID() -> CFTypeID;
 
-    pub fn CVMetalTextureGetTexture<'a>(image: CVMetalTextureRef) -> &'a TextureRef;
+    pub fn CVMetalTextureGetTexture<'a>(image: CVMetalTextureRef) -> metal::Texture;
 
     pub fn CVMetalTextureIsFlipped(image: CVMetalTextureRef) -> Boolean;
 
